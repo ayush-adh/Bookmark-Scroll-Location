@@ -2,17 +2,18 @@
   "manifest_version": 3,
   "name": "Bookmark Scroll Location",
   "description": "Allows you to save your scroll locations for web pages so you can navigate back to your last visited location quickly.",
-  "version": "0.0.1",
+  "version": "1.0.0",
+  "author": "Ayush Adhikari",
   "icons": {
     "64": "icons/icon.png"
   },
   "content_scripts": [
     {
       "matches": [
-        "*://*.mozilla.org/*"
+        "<all_urls>"
       ],
       "js": [
-        "content_script.js"
+        "contentScript.js"
       ]
     }
   ],
@@ -20,12 +21,13 @@
     "default_icon": {
       "64": "icons/icon.png"
     },
-    "default_popup": "browserAction/index.html",
+    "default_popup": "popup.html",
     "default_title": "Bookmark Scroll Location"
   },
   "permissions": [
     "clipboardWrite",
     "clipboardRead",
-    "activeTab"
+    "activeTab",
+    "storage"
   ]
 }
