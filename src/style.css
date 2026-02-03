@@ -112,7 +112,7 @@ body {
   flex-shrink: 3;
 }
 
-#bm-import-export {
+#bm-import-export,#bm-sync-git {
   display: flex;
   flex-direction: column;
   gap: 4px;

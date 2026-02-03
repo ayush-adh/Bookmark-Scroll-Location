@@ -12,10 +12,16 @@ export default defineConfig({
     rollupOptions: {
       input: {
         contentScript: resolve(__dirname, 'src/contentScript.ts'),
-        popupScript: resolve(__dirname, 'src/browserAction/script.ts')
+        popupScript: resolve(__dirname, 'src/browserAction/script.ts'),
+        style: resolve(__dirname, 'src/style.css')
       },
       output: {
-        entryFileNames: '[name].js'
+        entryFileNames: '[name].js',
+        assetFileNames: (assetInfo) => {
+          if (assetInfo.names?.[0]?.endsWith('.css'))
+            return '[name].css';
+          return '[name][extname]';
+        }
       }
     }
   }
