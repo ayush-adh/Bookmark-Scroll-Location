@@ -5,3 +5,10 @@ export interface BookmarkData {
   imgName: string;
   uri: string;
 }
+
+export interface BookmarkImgData {
+  id: string;
+  name: string;
+  date: string;
+  imgData: Blob;
+}
