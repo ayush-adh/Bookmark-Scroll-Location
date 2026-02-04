@@ -12,7 +12,7 @@ jobs:
     runs-on: ubuntu-latest
     defaults:
       run:
-        working_directory: src
+        working-directory: src
     steps:
       - name: Checkout repository
         uses: actions/checkout@v4
