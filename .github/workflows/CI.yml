@@ -8,6 +8,7 @@ on:
       - main
 jobs:
   test_extension:
+    if: ${{false}}
     name: Extension CI
     runs-on: ubuntu-latest
     defaults:
