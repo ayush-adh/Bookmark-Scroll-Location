@@ -11,8 +11,8 @@ export default defineConfig({
     emptyOutDir: true,
     rollupOptions: {
       input: {
-        contentScript: resolve(__dirname, "src/contentScript.ts"),
-        popupScript: resolve(__dirname, "src/browserAction/script.ts"),
+        contentScript: resolve(__dirname, "src/content/script.ts"),
+        popupScript: resolve(__dirname, "src/popup/script.ts"),
         style: resolve(__dirname, "src/style.css")
       },
       output: {
