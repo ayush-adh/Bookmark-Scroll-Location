@@ -23,7 +23,7 @@ body {
 
 /* Custom Classes */
 .custom-btn {
-  background: #f3503b;;
+  background: #f3503b;
   color: white;
   border: none;
   padding: 0;
@@ -112,7 +112,8 @@ body {
   flex-shrink: 3;
 }
 
-#bm-import-export,#bm-sync-git {
+#bm-import-export,
+#bm-sync-git {
   display: flex;
   flex-direction: column;
   gap: 4px;

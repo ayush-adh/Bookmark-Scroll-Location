@@ -1,5 +1,8 @@
 import { Homepage } from "./customElements/main";
-import { BookmarkCard, BookmarkCardEditor } from "./customElements/bookmarkCard";
+import {
+  BookmarkCard,
+  BookmarkCardEditor
+} from "./customElements/bookmarkCard";
 
 // Define custom elements
 customElements.define("Homepage", Homepage);
@@ -10,7 +13,7 @@ customElements.define("BookmarkCardEditor", BookmarkCardEditor);
 
 // Define variables
 var currentView = "home";
-var bookmarkList
+var bookmarkList;
 
 // Main
 const contentDiv = document.getElementById("conntent-div");

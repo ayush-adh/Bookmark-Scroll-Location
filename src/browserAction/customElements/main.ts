@@ -18,7 +18,13 @@ export class Homepage extends HTMLElement {
   }
 
   set callbacks(obj) {
-    if (!(typeof variable === 'object' && variable !== null && !Array.isArray(variable))) 
+    if (
+      !(
+        typeof variable === "object" &&
+        variable !== null &&
+        !Array.isArray(variable)
+      )
+    )
       return;
     this._callbacks = obj;
     this.render();
@@ -50,22 +56,24 @@ export class Homepage extends HTMLElement {
 
   handleClick(e) {
     const id = e.currentTarget.dataset.id;
-    if (typeof this.callbacks[id] == 'function')
-      this.callbacks[id](e);
+    if (typeof this.callbacks[id] == "function") this.callbacks[id](e);
   }
 
   connectedCallback() {
-    this.render();    
+    this.render();
     Object.keys(this.callbacks).forEach((x) => {
       const btn = this.querySelector(`#${x}`);
-      btn.removeEventListener('click', this.handleClick);
-      btn.addEventListener('click', this.handleClick);
+      btn.removeEventListener("click", this.handleClick);
+      btn.addEventListener("click", this.handleClick);
     });
   }
 
   disconnectedCallback() {
     Object.keys(this.callbacks).forEach((x) => {
-      this.querySelector(`#${x}`).removeEventListener('click', this.handleClick);
+      this.querySelector(`#${x}`).removeEventListener(
+        "click",
+        this.handleClick
+      );
     });
   }
 

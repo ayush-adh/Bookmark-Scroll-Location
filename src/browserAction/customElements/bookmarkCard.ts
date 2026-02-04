@@ -1,6 +1,7 @@
 export class BookmarkCard extends HTMLElement {
   connectedCallback() {
-    const timestamp = this.getAttribute("timestamp") || new Date().toLocaleString();
+    const timestamp =
+      this.getAttribute("timestamp") || new Date().toLocaleString();
     const name = this.getAttribute("name") || `Unnamed Bookmark ${timestamp}`;
     const bookmarkImg = this.getAttribute("bookmarkImg") || "default-bm.png";
     const url = this.getAttribute("url") || "#";
@@ -14,7 +15,8 @@ export class BookmarkCard extends HTMLElement {
 
 export class BookmarkCardEditor extends HTMLElement {
   connectedCallback() {
-    const timestamp = this.getAttribute("timestamp") || new Date().toLocaleString();
+    const timestamp =
+      this.getAttribute("timestamp") || new Date().toLocaleString();
     const name = this.getAttribute("name") || `Unnamed Bookmark ${timestamp}`;
     const bookmarkImg = this.getAttribute("bookmarkImg") || "default-bm.png";
     const url = this.getAttribute("url") || "#";

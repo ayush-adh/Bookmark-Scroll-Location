@@ -9,12 +9,8 @@
   },
   "content_scripts": [
     {
-      "matches": [
-        "<all_urls>"
-      ],
-      "js": [
-        "contentScript.js"
-      ]
+      "matches": ["<all_urls>"],
+      "js": ["contentScript.js"]
     }
   ],
   "action": {
@@ -24,10 +20,5 @@
     "default_popup": "popup.html",
     "default_title": "Bookmark Scroll Location"
   },
-  "permissions": [
-    "clipboardWrite",
-    "clipboardRead",
-    "activeTab",
-    "storage"
-  ]
+  "permissions": ["clipboardWrite", "clipboardRead", "activeTab", "storage"]
 }
