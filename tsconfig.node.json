@@ -1,13 +1,10 @@
 {
   "compilerOptions": {
     "composite": true,
-    "target": "ES2020",
-    "lib": ["DOM", "ES2020"],
+    "skipLibCheck": true,
     "module": "ESNext",
     "moduleResolution": "Bundler",
-    "strict": true,
-    "types": ["chrome", "firefox-webext-browser", "vite/client"],
-    "baseUrl": "./src"
+    "types": ["chrome", "firefox-webext-browser", "vite/client"]
   },
-  "include": ["src", "vite.config.ts"]
+  "include": [ "vite.config.ts"]
 }
