@@ -82,52 +82,108 @@ export class Homepage extends HTMLElement {
       <div id="pane-main" class="content-panes">
         <div id="search-sort">
           <div class="px-1" id="search-text-div">
-            <i class="bi bi-search mx-1" data-bs-toggle="tooltip" title="Search"></i>
-            <input type="text" id="search-text-input" placeholder="Search for bookmarks..." />
-            <i 
+            <i
+              class="bi bi-search mx-1"
+              data-bs-toggle="tooltip"
+              title="Search"
+            ></i>
+            <input
+              type="text"
+              id="search-text-input"
+              placeholder="Search for bookmarks..."
+            />
+            <i
               class="bi bi-arrow-right-circle-fill mx-1 pointer"
-              data-bs-toggle="tooltip" 
+              data-bs-toggle="tooltip"
               title="Go"
             ></i>
           </div>
           <div class="sort-buttons">
             <button type="button" class="custom-btn" id="sort-az">
-              <i 
-                style="font-size: larger" 
-                class="bi bi-sort-alpha-down mx-1" 
-                data-bs-toggle="tooltip" 
+              <i
+                style="font-size: larger"
+                class="bi bi-sort-alpha-down mx-1"
+                data-bs-toggle="tooltip"
                 title="Sort by Name"
               ></i>
             </button>
             <button type="button" class="custom-btn" id="sort-date">
-              <i 
-                style="font-size: larger" 
-                class="bi bi-sort-numeric-down mx-1" 
-                data-bs-toggle="tooltip" 
+              <i
+                style="font-size: larger"
+                class="bi bi-sort-numeric-down mx-1"
+                data-bs-toggle="tooltip"
                 title="Sort by Date"
               ></i>
             </button>
           </div>
         </div>
         <div id="bookmarks-list">
-          <div class="bm-cards" id="no-bm-msg">You have no saved bookmarks...</div>
-          <ul class="list-group">
-          </ul>
+          <div class="bm-cards" id="no-bm-msg">
+            You have no saved bookmarks...
+          </div>
+          <ul class="list-group"></ul>
         </div>
         <div id="utility-buttons">
-          <button type="button" class="custom-btn flex-grow-1" data-bs-toggle="tooltip" title="Add New Bookmark">
-            <i style="font-size: larger" class="bi bi-bookmark-plus-fill mx-1"></i>
+          <button
+            type="button"
+            class="custom-btn flex-grow-1"
+            data-bs-toggle="tooltip"
+            title="Add New Bookmark"
+          >
+            <i
+              style="font-size: larger"
+              class="bi bi-bookmark-plus-fill mx-1"
+            ></i>
             <b>Add Bookmarks</b>
           </button>
-          <button type="button" class="custom-btn flex-fill" data-bs-toggle="tooltip" title="View Saved Bookmarks">
+          <button
+            type="button"
+            class="custom-btn flex-fill"
+            data-bs-toggle="tooltip"
+            title="View Saved Bookmarks"
+          >
             <i style="font-size: larger" class="bi bi-bookmarks-fill mx-1"></i>
           </button>
           <div id="bm-import-export">
-            <button type="button" class="custom-btn flex-fill" data-bs-toggle="tooltip" title="Import Bookmarks">
-              <i style="font-size: medium" class="bi bi-box-arrow-in-left mx-1"></i>
+            <button
+              type="button"
+              class="custom-btn flex-fill"
+              data-bs-toggle="tooltip"
+              title="Import Bookmarks"
+            >
+              <i
+                style="font-size: medium"
+                class="bi bi-box-arrow-in-left mx-1"
+              ></i>
             </button>
-            <button type="button" class="custom-btn flex-fill" data-bs-toggle="tooltip" title="Export Bookmarks">
-              <i style="font-size: medium" class="bi bi-box-arrow-right mx-1"></i>
+            <button
+              type="button"
+              class="custom-btn flex-fill"
+              data-bs-toggle="tooltip"
+              title="Export Bookmarks"
+            >
+              <i
+                style="font-size: medium"
+                class="bi bi-box-arrow-right mx-1"
+              ></i>
+            </button>
+          </div>
+          <div id="bm-sync-git">
+            <button
+              type="button"
+              class="custom-btn flex-fill"
+              data-bs-toggle="tooltip"
+              title="Sync Data"
+            >
+              <i style="font-size: medium" class="bi bi-arrow-repeat mx-1"></i>
+            </button>
+            <button
+              type="button"
+              class="custom-btn flex-fill"
+              data-bs-toggle="tooltip"
+              title="Open Git Repo"
+            >
+              <i style="font-size: medium" class="bi bi-github mx-1"></i>
             </button>
           </div>
         </div>
