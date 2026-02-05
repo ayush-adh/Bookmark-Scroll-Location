@@ -6,5 +6,5 @@
     "moduleResolution": "Bundler",
     "types": ["chrome", "firefox-webext-browser", "vite/client"]
   },
-  "include": [ "vite.config.ts"]
+  "include": ["vite.config.ts"]
 }
