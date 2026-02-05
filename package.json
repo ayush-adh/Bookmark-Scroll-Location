@@ -20,6 +20,7 @@
     "vite": "^7.3.1"
   },
   "dependencies": {
-    "js-file-download": "^0.4.12"
+    "@interactjs/actions": "^1.10.27",
+    "@interactjs/interact": "^1.10.27"
   }
 }

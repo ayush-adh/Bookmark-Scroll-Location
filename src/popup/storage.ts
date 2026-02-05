@@ -4,7 +4,7 @@ import {
   StorageBMReturnType,
   StorageImgReturnType
 } from "types/storage";
-import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "../constants";
+import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "../utility/constants";
 
 export async function addBookmark(bm: BookmarkData): Promise<ErrorReturnType> {
   try {
