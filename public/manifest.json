@@ -13,6 +13,10 @@
       "js": ["contentScript.js"]
     }
   ],
+  "background": {
+    "scripts": ["backgroundScript.js"],
+    "service_worker": ["backgroundScript.js"]
+  },
   "action": {
     "default_icon": {
       "64": "icons/icon.png"

@@ -1,16 +1,26 @@
+export type CurrentViewAllowedValues = "home" | "edit" | "bm-imgs" | "import";
+
+export interface BMDataImgMetadata {
+  name: string;
+  color: string;
+  width: number;
+  height: number;
+  angle: number;
+}
+
 export interface BookmarkData {
   id: string;
   name: string;
-  date: Date;
-  imgName: string;
-  uri: string;
+  lastUpdatedDate: number;
+  createdDate: number;
+  imgData: BMDataImgMetadata;
+  url: string;
 }
 
 export interface BookmarkImgData {
   id: string;
   name: string;
-  date: string;
-  imgData: Blob;
+  createdDate: number;
+  lastUpdatedDate: number;
+  imgData: string;
 }
-
-export type CurrentViewAllowedValues = "home" | "edit" | "bm-imgs" | "import";

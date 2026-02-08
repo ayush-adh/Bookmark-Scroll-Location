@@ -1,4 +1,4 @@
-import { BookmarkData } from "types/bookmark";
+import { BookmarkData } from "@bm-types/bookmark";
 
 export class BookmarkCard extends HTMLElement {
   private bookmarkData: BookmarkData | null;

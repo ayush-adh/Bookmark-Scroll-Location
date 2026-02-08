@@ -6,6 +6,18 @@ import { dirname } from "path";
 const __dirname = dirname(fileURLToPath(import.meta.url));
 
 export default defineConfig({
+  publicDir: "public",
+  resolve: {
+    alias: {
+      "@": resolve(__dirname, "src"),
+      "@bm-types": resolve(__dirname, "src/types"),
+      "@popup": resolve(__dirname, "src/popup"),
+      "@background": resolve(__dirname, "src/background"),
+      "@content": resolve(__dirname, "src/content"),
+      "@assets": resolve(__dirname, "src/assets"),
+      "@utility": resolve(__dirname, "src/utility")
+    }
+  },
   build: {
     outDir: "dist",
     emptyOutDir: true,
@@ -13,6 +25,7 @@ export default defineConfig({
       input: {
         contentScript: resolve(__dirname, "src/content/script.ts"),
         popupScript: resolve(__dirname, "src/popup/script.ts"),
+        backgroundScript: resolve(__dirname, "src/background/script.ts"),
         style: resolve(__dirname, "src/style.css")
       },
       output: {

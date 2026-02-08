@@ -1,6 +1,6 @@
-import { BOOKMARK_STORAGE_VAR } from "../../utility/constants";
-import { getBookmarks } from "../../utility/storage";
-import { BookmarkData } from "types/bookmark";
+import { BOOKMARK_STORAGE_VAR } from "@utility/constants";
+import { getBookmarks } from "@utility/storage";
+import { BookmarkData } from "@bm-types/bookmark";
 
 export class Homepage extends HTMLElement {
   private sortSelected: Set<"az" | "date">;
@@ -75,13 +75,13 @@ export class Homepage extends HTMLElement {
           bmsToRender.sort((a, b) => {
             return (
               a.name.localeCompare(b.name) ||
-              a.date.getTime() - b.date.getTime()
+              a.lastUpdatedDate - b.lastUpdatedDate
             );
           });
         }
         bmsToRender.sort((a, b) => a.name.localeCompare(b.name));
       } else if (this.sortSelected.has("date")) {
-        bmsToRender.sort((a, b) => a.date.getTime() - b.date.getTime());
+        bmsToRender.sort((a, b) => a.lastUpdatedDate - b.lastUpdatedDate);
       }
     });
 

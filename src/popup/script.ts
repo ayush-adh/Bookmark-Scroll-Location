@@ -1,13 +1,14 @@
 import { Homepage } from "./customElements/main";
-import { syncStorage, getBookmarks } from "../utility/storage";
-import fileDownload from "../utility/fileDownload";
-import { FileDownloadType } from "../types/utility";
-import { CurrentViewAllowedValues } from "../types/bookmark";
+import { syncStorage, getBookmarks } from "@utility/storage";
+import fileDownload from "@utility/fileDownload";
+import { FileDownloadType } from "@bm-types/utility";
+import { CurrentViewAllowedValues } from "@bm-types/bookmark";
 
 // Define custom elements
 customElements.define("bm-homepage", Homepage);
 
 // Define variables
+const browserEnv = typeof browser !== "undefined" ? browser : chrome;
 const scrollBMState = new Proxy(
   { view: "home" } as { view: CurrentViewAllowedValues },
   {

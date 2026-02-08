@@ -1,9 +1,9 @@
-import { BookmarkData, BookmarkImgData } from "types/bookmark";
+import { BookmarkData, BookmarkImgData } from "@bm-types/bookmark";
 import {
   ErrorReturnType,
   StorageBMReturnType,
   StorageImgReturnType
-} from "types/storage";
+} from "@bm-types/storage";
 import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "./constants";
 
 export async function addBookmark(bm: BookmarkData): Promise<ErrorReturnType> {
@@ -65,14 +65,47 @@ export async function editBookmark(
 }
 
 export async function getBookmarks(): Promise<StorageBMReturnType> {
-  try {
-    const result = await browser.storage.local.get(BOOKMARK_STORAGE_VAR);
-    if (!result || result[BOOKMARK_STORAGE_VAR] === undefined)
-      browser.storage.local.set({ BOOKMARK_STORAGE_VAR: [] });
-    return { error: null, data: [] } as StorageBMReturnType;
-  } catch (error) {
-    return { error, data: null } as StorageBMReturnType;
-  }
+  // try {
+  //   const result = await browser.storage.local.get(BOOKMARK_STORAGE_VAR);
+  //   if (!result || result[BOOKMARK_STORAGE_VAR] === undefined)
+  //     browser.storage.local.set({ BOOKMARK_STORAGE_VAR: [] });
+  //   return { error: null, data: [] } as StorageBMReturnType;
+  // } catch (error) {
+  //   return { error, data: null } as StorageBMReturnType;
+  // }
+  
+  // Mock data for testing
+  const mockData: Array<BookmarkData> = [
+    {
+      id: "1",
+      name: "Example Bookmark 1",
+      url: "https://www.example.com",
+      createdDate: Date.now(),
+      lastUpdatedDate: Date.now(),
+      imgData: {
+        name: "bm-style-1.svg",
+        color: "#ff0000",
+        width: 100,
+        height: 100,
+        angle: 0
+      }
+    },
+    {
+      id: "2",
+      name: "Example Bookmark 2",
+      url: "https://www.example2.com",
+      createdDate: Date.now(),
+      lastUpdatedDate: Date.now(),
+      imgData: {
+        name: "bm-style-2.svg",
+        color: "#00ff00",
+        width: 300,
+        height: 100,
+        angle: 0
+      }
+    }
+  ];
+  return { error: null, data: mockData } as StorageBMReturnType;
 }
 
 export async function addBookmarkImg(
