@@ -8,7 +8,6 @@ import { CurrentViewAllowedValues } from "@bm-types/bookmark";
 customElements.define("bm-homepage", Homepage);
 
 // Define variables
-const browserEnv = typeof browser !== "undefined" ? browser : chrome;
 const scrollBMState = new Proxy(
   { view: "bm-home" } as { view: CurrentViewAllowedValues },
   {

@@ -5,7 +5,7 @@
     "lib": ["ES2022", "DOM", "DOM.Iterable"],
     "module": "ESNext",
     "skipLibCheck": true,
-    "baseUrl": ".",
+    "baseUrl": "./src",
 
     /* Bundler mode */
     "moduleResolution": "bundler",
@@ -22,14 +22,14 @@
 
     /* Paths */
     "paths": {
-      "@/*": ["src/*"],
-      "@bm-types/*": ["src/types/*"],
-      "@popup/*": ["src/popup/*"],
-      "@content/*": ["src/content/*"],
-      "@background/*": ["src/background/*"],
-      "@assets/*": ["src/assets/*"],
-      "@components/*": ["src/components/*"],
-      "@utility/*": ["src/utility/*"]
+      "@/*": ["/*"],
+      "@bm-types/*": ["types/*"],
+      "@popup/*": ["popup/*"],
+      "@content/*": ["content/*"],
+      "@background/*": ["background/*"],
+      "@assets/*": ["assets/*"],
+      "@components/*": ["components/*"],
+      "@utility/*": ["utility/*"]
     }
   },
   "include": ["src"],
