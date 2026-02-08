@@ -20,7 +20,9 @@ export class Homepage extends HTMLElement {
   }
 
   addEventListeners(): void {
-    const searchInput = this.querySelector("#search-text-input") as HTMLInputElement;
+    const searchInput = this.querySelector(
+      "#search-text-input"
+    ) as HTMLInputElement;
     const searchBtn = this.querySelector("#search-bm-btn") as HTMLElement;
     const sortAZBtn = this.querySelector("#sort-az") as HTMLElement;
     const sortDateBtn = this.querySelector("#sort-date") as HTMLElement;
@@ -50,9 +52,10 @@ export class Homepage extends HTMLElement {
   }
 
   getBMsToRender(): Array<BookmarkData> {
-    const searchString = (
-      this.querySelector("#search-text-input") as HTMLInputElement
-    )?.value.trim().toLowerCase() || "";
+    const searchString =
+      (this.querySelector("#search-text-input") as HTMLInputElement)?.value
+        .trim()
+        .toLowerCase() || "";
     let bmsToRender: Array<BookmarkData> = [];
 
     getBookmarks().then((res) => {
@@ -64,15 +67,16 @@ export class Homepage extends HTMLElement {
       if (searchString) {
         bmsToRender = bmsToRender.filter((bm) => {
           const searchRegex = new RegExp(searchString, "ig");
-          return (
-            searchRegex.test(JSON.stringify(bm))
-          );
+          return searchRegex.test(JSON.stringify(bm));
         });
       }
       if (this.sortSelected.has("az")) {
         if (this.sortSelected.has("date")) {
           bmsToRender.sort((a, b) => {
-            return a.name.localeCompare(b.name) || a.date.getTime() - b.date.getTime();
+            return (
+              a.name.localeCompare(b.name) ||
+              a.date.getTime() - b.date.getTime()
+            );
           });
         }
         bmsToRender.sort((a, b) => a.name.localeCompare(b.name));

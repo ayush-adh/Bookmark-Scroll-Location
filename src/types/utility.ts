@@ -3,4 +3,4 @@ export interface FileDownloadType {
   filename: string;
   mimeType?: string;
   bom?: string;
-};
+}

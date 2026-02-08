@@ -21,9 +21,7 @@ export class BookmarkCard extends HTMLElement {
     this.render();
   }
 
-  addEventListeners(): void {
-
-  }
+  addEventListeners(): void {}
 
   render(): void {
     this.innerHTML = `
