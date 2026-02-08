@@ -1,4 +1,4 @@
-export type CurrentViewAllowedValues = "home" | "edit" | "bm-imgs" | "import";
+export type CurrentViewAllowedValues = "bm-home" | "bm-edit" | "bm-imgs" | "bm-import";
 
 export interface BMDataImgMetadata {
   name: string;

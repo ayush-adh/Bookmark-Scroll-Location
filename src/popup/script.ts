@@ -10,7 +10,7 @@ customElements.define("bm-homepage", Homepage);
 // Define variables
 const browserEnv = typeof browser !== "undefined" ? browser : chrome;
 const scrollBMState = new Proxy(
-  { view: "home" } as { view: CurrentViewAllowedValues },
+  { view: "bm-home" } as { view: CurrentViewAllowedValues },
   {
     set(target, prop, value) {
       if (prop === "view" && target[prop] !== value) {
@@ -23,13 +23,14 @@ const scrollBMState = new Proxy(
   }
 );
 
+// Memoization
 const bmComponents = {
   homepage: document.createElement("bm-homepage") as Homepage
 };
 
 // Define events
 function onClickAddBM() {
-  scrollBMState.view = "edit";
+  scrollBMState.view = "bm-edit";
 }
 
 function onClickBMImgs() {
@@ -37,7 +38,6 @@ function onClickBMImgs() {
 }
 
 function onClickImport() {
-  scrollBMState.view = "import";
 }
 
 function onClickExport() {
@@ -112,7 +112,7 @@ function renderCurrentView(view: CurrentViewAllowedValues): void {
   }
   mainPanDiv.innerHTML = "";
   switch (view) {
-    case "home":
+    case "bm-home":
       mainPanDiv.appendChild(bmComponents.homepage);
       addHomepageEvents();
       break;

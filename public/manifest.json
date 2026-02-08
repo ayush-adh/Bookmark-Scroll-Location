@@ -15,7 +15,8 @@
   ],
   "background": {
     "scripts": ["backgroundScript.js"],
-    "service_worker": ["backgroundScript.js"]
+    "service_worker": "backgroundScript.js",
+    "type": "module"
   },
   "action": {
     "default_icon": {
