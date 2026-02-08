@@ -12,3 +12,5 @@ export interface BookmarkImgData {
   date: string;
   imgData: Blob;
 }
+
+export type CurrentViewAllowedValues = "home" | "edit" | "bm-imgs" | "import";

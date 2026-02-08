@@ -1,29 +1,36 @@
+import { BookmarkData } from "types/bookmark";
+
 export class BookmarkCard extends HTMLElement {
-  connectedCallback() {
-    const timestamp =
-      this.getAttribute("timestamp") || new Date().toLocaleString();
-    const name = this.getAttribute("name") || `Unnamed Bookmark ${timestamp}`;
-    const bookmarkImg = this.getAttribute("bookmarkImg") || "default-bm.png";
-    const url = this.getAttribute("url") || "#";
-    const onDelete = this.getAttribute("onDelete");
-    const onEdit = this.getAttribute("onEdit");
-    this.innerHTML = `
+  private bookmarkData: BookmarkData | null;
 
-    `;
+  constructor() {
+    super();
+    this.bookmarkData = null;
   }
-}
 
-export class BookmarkCardEditor extends HTMLElement {
-  connectedCallback() {
-    const timestamp =
-      this.getAttribute("timestamp") || new Date().toLocaleString();
-    const name = this.getAttribute("name") || `Unnamed Bookmark ${timestamp}`;
-    const bookmarkImg = this.getAttribute("bookmarkImg") || "default-bm.png";
-    const url = this.getAttribute("url") || "#";
-    const onSave = this.getAttribute("onSave");
-    const onCancel = this.getAttribute("onCancel");
+  set data(data: BookmarkData) {
+    this.bookmarkData = data;
+    this.render();
+  }
+
+  get data(): BookmarkData | null {
+    return this.bookmarkData;
+  }
+
+  connectedCallback(): void {
+    this.render();
+  }
+
+  addEventListeners(): void {
+
+  }
+
+  render(): void {
     this.innerHTML = `
+      <div class="bm-cards">
         
+      </div>
     `;
+    this.addEventListeners();
   }
 }

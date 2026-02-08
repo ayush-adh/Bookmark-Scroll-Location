@@ -4,7 +4,7 @@ import {
   StorageBMReturnType,
   StorageImgReturnType
 } from "types/storage";
-import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "../utility/constants";
+import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "./constants";
 
 export async function addBookmark(bm: BookmarkData): Promise<ErrorReturnType> {
   try {
@@ -148,7 +148,7 @@ export async function getBookmarkImgs(): Promise<StorageImgReturnType> {
   }
 }
 
-export async function syncStorage() {
+export async function syncStorage(): Promise<void> {
   const localBookmarks = await getBookmarks();
   const localBookmarkImgs = await getBookmarkImgs();
   await browser.storage.sync.set({
