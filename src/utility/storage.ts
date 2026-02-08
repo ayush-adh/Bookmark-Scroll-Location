@@ -73,7 +73,7 @@ export async function getBookmarks(): Promise<StorageBMReturnType> {
   // } catch (error) {
   //   return { error, data: null } as StorageBMReturnType;
   // }
-  
+
   // Mock data for testing
   const mockData: Array<BookmarkData> = [
     {

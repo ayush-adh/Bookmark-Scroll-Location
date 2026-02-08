@@ -1,5 +1,8 @@
 import { BookmarkData, BookmarkImgData } from "@bm-types/bookmark";
-import { BOOKMARK_STORAGE_VAR, BOOKMARK_STORAGE_IMGS_VAR } from "@utility/constants";
+import {
+  BOOKMARK_STORAGE_VAR,
+  BOOKMARK_STORAGE_IMGS_VAR
+} from "@utility/constants";
 import BM_IMG_1 from "@assets/bm-style-1.svg?raw";
 import BM_IMG_2 from "@assets/bm-style-2.svg?raw";
 import BM_IMG_3 from "@assets/bm-style-3.svg?raw";
@@ -10,7 +13,7 @@ function toBase64Uri(rawSvg: string): string {
     .replace(/%0A/g, "")
     .replace(/%20/g, " ")
     .replace(/%3D/g, "=")
-    .replace(/%3A/g, ":") 
+    .replace(/%3A/g, ":")
     .replace(/%2F/g, "/");
   return `data:image/svg+xml;base64,${base64}`;
 }
